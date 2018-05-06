@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  div
+    | This is a list of all the files on either your local
+    | node instance. When running on heroku this list not 
+    | show any files as the project code removes files from 
+    | the ephemeral file storage /tmp as soon as they are 
+    | uploaded to AWS.
+
+  table.table.table-striped
+    thead
+      tr
+        th Image
+        th Local Name
+        th Delete?
+    tbody
+      - for (var i = 0; i < params.files.length; ++i)
+        tr
+         td
+          img(class='img-polaroid', width='50', src='/images/' + params.files[i])
+          &nbsp;
+         td
+          = params.files[i]
+         td 
+           button(class="btn btn-small", type="button", onclick="document.location='/local/delete/" + params.files[i] + "';") Remove

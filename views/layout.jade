@@ -1,0 +1,77 @@
+doctype 5
+html(lang="en")
+  head
+    title
+      | Heroku + S3 via Node.js #{(params.title) ? ' - ' + params.title : ''}
+    meta(name='charset', content='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='/assets/css/bootstrap.css')
+    style
+      body { 
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+
+    link(rel='stylesheet', href='/assets/css/bootstrap-responsive.css')
+
+    script(src='/assets/js/bootstrap.min.js')
+    script(src='/assets/js/bootstrap-fileupload.js')
+  
+    block header
+  body
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container
+          a(class="btn btn-navbar", data-toggle="collapse", data-target=".nav-collapse")
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a(class="brand", href='/') Node+Heroku+S3 Demo
+          div.nav-collapse.collapse
+            ul.nav
+              li
+                a(href="/") S3 Files
+              li
+                a(href="/local") Local Files
+              li
+                a(href="/about") About
+
+    .div.hidden-tablet.nav-collapse.hidden-phone
+      a(href="https://github.com/d1b1/heroku-nodejs-s3-demo", class="hidden-tablet hidden-phone") 
+        img(style="z-index: 3000; position: absolute; top: 0; right: 0; border: 0;", class="hidden-tablet hidden-phone", src="/assets/img/forkme_right_gray_6d6d6d.png", alt="Fork me on GitHub")
+
+    div.container
+
+      - if (params.title) 
+        h2 #{params.title}
+
+      - if (params.showform)
+        p Use this form to upload images to S3. 
+        div.row
+          .span12
+            form(method="post", action="/", data-toggle-value="is_private", enctype="multipart/form-data")
+              input(type="file", class="btn", name="file")
+              input(type="submit", class="btn btn-large", data-toggle="button", value="Upload")
+
+      block content
+
+      hr
+
+      footer
+        p 
+          &copy; 
+          a(href="https://github.com/d1b1") d1b1 2012
+
+
+      script(type="text/javascript")
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-33988005-3']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
