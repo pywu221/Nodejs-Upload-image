@@ -2,13 +2,13 @@ const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
 
-var fs        = require('fs'),
-    jade      = require('jade'),
-    path      = require('path'),
-    knox      = require('knox'),
-    knoxCopy  = require('knox-copy'),
-    http      = require('http'),
-    Blitline  = require('blitline');
+const fs        = require('fs')
+const    jade      = require('jade')
+const    path      = require('path')
+const    knox      = require('knox')
+const    knoxCopy  = require('knox-copy')
+const   http      = require('http')
+const    Blitline  = require('blitline')
 
 var amazon_url = 'http://s3.amazonaws.com/' + process.env.AWS_S3_BUCKET;
 var knox_params = {
