@@ -20,7 +20,7 @@ const amazon_url = 'http://s3.amazonaws.com/' + process.env.AWS_S3_BUCKET
 express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
-  .set('view engine', 'jade')
+  .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 /*
