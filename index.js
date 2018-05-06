@@ -4,7 +4,6 @@ const PORT = process.env.PORT || 5000
 
 const fs        = require('fs')
 const    jade      = require('jade')
-const    path      = require('path')
 const    knox      = require('knox')
 const    knoxCopy  = require('knox-copy')
 const   http      = require('http')
