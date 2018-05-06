@@ -27,16 +27,11 @@ express()
 
 var app = express();
 
-var path = __dirname + '/tmp';
-
-app.configure('production', function() {
- path = __dirname + '/../tmp';
-});
 
 app.configure(function(){
-  app.set('views', __dirname + '/views');
-  app.set('view options', { layout: true, pretty: true });
-  app.set('view engine', 'jade');
+  app.set('views', path.join(__dirname, 'views'))
+  app.set('view options', { layout: true, pretty: true })
+  app.set('view engine', 'jade')
 
   // Setup the basic express settings.
   app.use(express.bodyParser());
