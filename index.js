@@ -9,12 +9,6 @@ const    knoxCopy  = require('knox-copy')
 const   http      = require('http')
 const    Blitline  = require('blitline')
 
-var amazon_url = 'http://s3.amazonaws.com/' + process.env.AWS_S3_BUCKET;
-var knox_params = {
-    key: process.env.AWS_ACCESS_KEY_ID.toString(),
-    secret: process.env.AWS_SECRET_ACCESS_KEY.toString(),
-    bucket: process.env.AWS_S3_BUCKET.toString()
-  }
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
