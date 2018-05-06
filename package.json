@@ -1,23 +1,36 @@
 {
-  "name": "uploader",
-  "version": "0.0.2",
-  "description": "Sample project that implements image upload and resizing using node.js, blitline.com and AWS s3 on Heroku via ephemeral file storage.",
-  "repository": "git://github.com/d1b1/heroku-nodejs-s3-demo",
-  "author": "Stephan Smith (Stephan.Smith.bc93@gmail.com) d1b1",
+  "name": "node-js-getting-started",
+  "version": "0.3.0",
+  "description": "A sample Node.js app using Express 4",
   "engines": {
     "node": "8.9.1"
   },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
   "dependencies": {
-    "express": "3.0.0rc2",
-    "request": "2.9.202",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
     "jade": "~0.27.2",
     "path": "~0.4.9",
     "knox": "~0.3.1",
     "knox-copy": "~0.1.0",
     "blitline": "~1.1.6"
   },
-  "main": "index.js",
-  "scripts": {
-    "start": "index.js"
-  }
+  "devDependencies": {
+    "request": "^2.81.0",
+    "tape": "^4.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heroku/node-js-getting-started"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
 }
