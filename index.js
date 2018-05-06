@@ -16,22 +16,27 @@ const amazon_url = 'http://s3.amazonaws.com/' + process.env.AWS_S3_BUCKET
 //    bucket: process.env.AWS_S3_BUCKET.toString()
 //  }
 
-/*
+
 express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
-  .set('view engine', 'ejs')
+  .set('view engine', 'jade')
   .get('/', (req, res) => res.render('pages/index'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
-  */
-
+/*
 var app = express();
 
+var path = __dirname + '/tmp';
+
+app.configure('production', function() {
+ path = __dirname + '/../tmp';
+});
 
 app.configure(function(){
-  app.set('views', path.join(__dirname, 'views'))
-  app.set('view options', { layout: true, pretty: true })
-  app.set('view engine', 'jade')
+  app.set('port', process.env.PORT || 4000);
+  app.set('views', __dirname + '/views');
+  app.set('view options', { layout: true, pretty: true });
+  app.set('view engine', 'jade');
 
   // Setup the basic express settings.
   app.use(express.bodyParser());
@@ -80,7 +85,7 @@ app.get('/local/delete/:name', function(req, res) {
   });
 
 });
-/*
+
 var resizer = function( filename, width, height ) {
 
   var blitline = new Blitline();
@@ -216,9 +221,10 @@ app.get('/', function(req, res) {
   })
 
 })
-*/
+
 // ------ Start the App ----------------------------------------
 
 app.listen(PORT, function() { 
   console.log('StartUp: S3-Heroku Demo on ' + PORT )
 })
+*/
