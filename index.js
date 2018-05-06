@@ -16,14 +16,14 @@ const knox_params = {
     bucket: process.env.AWS_S3_BUCKET.toString()
   }
 
-/*
+
 express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
-*/
+/*
 var app = express();
 
 var path = __dirname + '/tmp';
@@ -227,3 +227,4 @@ app.get('/', function(req, res) {
 app.listen(PORT, function() { 
   console.log('StartUp: S3-Heroku Demo on ' + PORT )
 })
+*/
