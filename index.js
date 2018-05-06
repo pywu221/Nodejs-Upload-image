@@ -34,7 +34,6 @@ app.configure('production', function() {
 });
 
 app.configure(function(){
-  app.set('port', process.env.PORT || 4000);
   app.set('views', __dirname + '/views');
   app.set('view options', { layout: true, pretty: true });
   app.set('view engine', 'jade');
